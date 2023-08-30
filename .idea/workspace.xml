@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="257c2ff3-73a0-4a07-bf6a-672b7c58649e" name="Changes" comment="" />
+    <list default="true" id="257c2ff3-73a0-4a07-bf6a-672b7c58649e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+    </list>
+    <list id="9be34a0b-0e9e-4526-938d-b8bfbedc5797" name="Changes by oscar" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,9 +38,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/main/kotlin/Main.kt">
+      <ranges>
+        <range start1="0" end1="3" start2="0" end2="4" changelist="257c2ff3-73a0-4a07-bf6a-672b7c58649e" />
+        <range start1="5" end1="6" start2="6" end2="6" changelist="257c2ff3-73a0-4a07-bf6a-672b7c58649e" />
+        <range start1="9" end1="10" start2="9" end2="11" changelist="257c2ff3-73a0-4a07-bf6a-672b7c58649e" />
+        <range start1="11" end1="19" start2="12" end2="24" changelist="257c2ff3-73a0-4a07-bf6a-672b7c58649e" />
+        <range start1="22" end1="22" start2="27" end2="28" changelist="257c2ff3-73a0-4a07-bf6a-672b7c58649e" />
+        <range start1="25" end1="26" start2="31" end2="33" changelist="257c2ff3-73a0-4a07-bf6a-672b7c58649e" />
+        <range start1="27" end1="28" start2="34" end2="36" changelist="257c2ff3-73a0-4a07-bf6a-672b7c58649e" />
+        <range start1="32" end1="33" start2="40" end2="41" changelist="9be34a0b-0e9e-4526-938d-b8bfbedc5797" />
+        <range start1="38" end1="38" start2="46" end2="77" changelist="257c2ff3-73a0-4a07-bf6a-672b7c58649e" />
+      </ranges>
+    </file>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2Uhhtu8NQkP2YAECUgGji9Qyd1Y" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -44,15 +67,33 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "last_opened_file_path": "D:/Javautveckling/Grupp3_Exercise2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="Grupp3_Exercise2.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,6 +103,7 @@
       <option name="presentableId" value="Default" />
       <updated>1693397942911</updated>
       <workItem from="1693398162991" duration="430000" />
+      <workItem from="1693399183913" duration="5335000" />
     </task>
     <servers />
   </component>
