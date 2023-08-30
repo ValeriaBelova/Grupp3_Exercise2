@@ -30,7 +30,7 @@ fun generateCombinations(set: CharArray, current: CharArray, hiddenWord: String,
 
     for (char in set) {
         current[position] = char
-        if (generateCombinations(set, current, hiddenWord, position + 1)) {
+        if (generateCombinations(set, current, position + 1)) {
             return true
         }
     }
