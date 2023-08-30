@@ -1,5 +1,7 @@
 import kotlin.system.measureTimeMillis
 
+// Test
+
 fun main() {
     val hiddenWord = "o*s03"
     val characterSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+"
