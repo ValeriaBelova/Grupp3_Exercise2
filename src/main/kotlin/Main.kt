@@ -7,7 +7,7 @@ import java.net.URL
 fun main() {
     val startTime = System.currentTimeMillis()
     //brute()
-    dictionary(getListOfPasswords(), 0)
+    println(dictionary(getListOfPasswords(),0))
     val elapsedTime = System.currentTimeMillis() - startTime
     println("Elapsed time: $elapsedTime ms")
 }
@@ -80,7 +80,7 @@ fun apiCall(password: String): Int {
 tailrec fun dictionary(list: List<String>, index: Int): String {
     when { index == list.size -> return "No password matched." }
     println("Trying: " + list[index])
-    when { apiCall(list[index]) == 200 -> return "Cracked! " + list[index] + " was the right password." }
+    when { apiCall(list[index]) == 200 -> return "Cracked after " + index + " tries. " + list[index] + " was the right password." }
     return dictionary(list, index + 1)
 }
 
