@@ -79,8 +79,8 @@ fun apiCall(password: String): Int {
 
 tailrec fun dictionary(list: List<String>, index: Int): String {
     when { index == list.size -> return "No password matched." }
-    println("Trying: " + list[index])
-    when { apiCall(list[index]) == 200 -> return "Cracked after " + index + " tries. " + list[index] + " was the right password." }
+    println("Trying " + (index + 1) + ": " + list[index])
+    when { apiCall(list[index]) == 200 -> return "Cracked after " + (index +1) + " tries. " + list[index] + " was the right password." }
     return dictionary(list, index + 1)
 }
 
